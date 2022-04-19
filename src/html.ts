@@ -16,9 +16,28 @@ btn1El?.addEventListener('click', (): void => {
 });
 
 const formEl: HTMLFormElement = document.forms[0];
+const usernameEl: HTMLInputElement | null = document.getElementById(
+  'username'
+) as HTMLInputElement | null;
+const ageEl = document.getElementById('age') as HTMLInputElement | null;
 
 formEl.addEventListener('submit', (event: SubmitEvent): void => {
   event.preventDefault();
   console.log('js is in control');
   // return 5; err void
+  console.log(usernameEl?.value);
+  // multi
+  if (!ageEl) return;
+  const ageValue = ageEl.valueAsNumber;
+  const ageRezult = multi(ageValue, 5);
+  console.log('ageRezult ===', ageRezult);
 });
+
+function multi(x: number, y: number): number {
+  const rezult: number = x * y;
+  return rezult;
+}
+
+// gauti age input reiskme ir panaudoti multi funkcija kad padauginti age is 5
+
+//
