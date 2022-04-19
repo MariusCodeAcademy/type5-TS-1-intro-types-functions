@@ -26,7 +26,36 @@ enum MathOps {
 console.log(MathOps.divide);
 
 // 5 parasyti tipa objektui pavadinimu Item kuris turi id: string, title: string, isOnSale: boolean, price: number, sukurti 3 objektus kintamuosiuose.
+type Item = {
+  id: string;
+  title: string;
+  isOnSale: boolean;
+  price: number;
+};
+const it1: Item = {
+  id: 'abc',
+  title: 'Shoes',
+  isOnSale: true,
+  price: 59.99,
+};
+const it2: Item = {
+  id: 'abc11',
+  title: 'Ball',
+  isOnSale: false,
+  price: 99.99,
+};
+
 // 5.1 sukurti 3 kinamuosius masyve
+const itemsArr: Item[] = [
+  it1,
+  it2,
+  {
+    id: 'sdsd',
+    title: 'Hat',
+    isOnSale: true,
+    price: 125,
+  },
+];
 
 // 6. parasyti funkcija kuri argumentu ima skaiciu masyva. pvz
 // [1, 2, 3, 4]
